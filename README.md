@@ -13,7 +13,8 @@ pets-adoption-platform/
 |   |      |___________pets.controller.js
 |   |      |___________clinics.controller.js
 |   |      |___________articles.controller.js
-|   |                       
+|   | 
+|   |_____middlewares
 |   |_____Data/ (or)   models/  when dealing with mongoDB   (pet.model.js, clinic.model.js ,...)                
 |   |     |______data.js                                  
 |   |                                       
@@ -40,7 +41,7 @@ _____________________________________________________________________________
 
 - Method : Get
 - Endpoint: '/api/pets'
-- Query Parameters : location (required ) , type (optional)
+- Query Parameters : location (optional ) , type (optional)
 - Response:
 
 // Get : '/api/pets?location=lattakia&type=cat'
@@ -56,7 +57,7 @@ _____________________________________________________________________________
   }
   
 - Errors:
-  - 400 (missing or invalid query params)
+  - 400 (invalid query params)
   - 404 (no pets found)
 
 ## find open clinic for emergency
@@ -81,14 +82,14 @@ _____________________________________________________________________________
   }
   
 - Errors:
-  - 400 (missing or invalid query params)
+  - 400 (missing (location) or invalid query params)
   - 404 (no clinics open found)
 
 ## search articles by pet type
 
 - Method : Get
 - Endpoint: '/api/articles'
-- Query Parameters : petType(required)
+- Query Parameters : petType(optional)
 - Response:
 
 // Get : '/api/articles?petType=dog'
@@ -102,7 +103,7 @@ _____________________________________________________________________________
   }
   
 - Errors:
-  - 400 (missing or invalid query params)
+  - 400 (invalid query params)
   - 404 (no article found for this petType)
 
 
